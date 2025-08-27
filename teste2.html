@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Entrar - AlugueFácil</title>
+    <link rel="stylesheet" href="estilos/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Cabeçalho igual ao index -->
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="2-removebg-preview.png" alt="Logo AlugueFácil" class="logo-img">
+                </a>
+            </div>
+        
+            <nav class="nav-links">
+                <a href="login.html" class="active">Entrar</a>
+                <a href="cadastro.html">Cadastrar</a>
+            </nav>
+        
+            <div class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Conteúdo do formulário -->
+    <main class="form-container" style="max-width: 400px; margin: 60px auto; padding: 20px;">
+        <h2 style="text-align: center; margin-bottom: 20px;">Entrar na sua conta</h2>
+        
+        <!-- Agora envia os dados para login.php -->
+        <form action="php/login.php" method="POST" style="display: flex; flex-direction: column;">
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com" required>
+        
+            <label for="senha">Senha:</label>
+            <input type="password" id="senha" name="senha" placeholder="Sua senha" required>
+        
+            <button type="submit" style="margin-top: 15px;">Entrar</button>
+        </form>
+        
+    </main>
+
+</body>
+</html>

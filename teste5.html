@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Cadastrar - AlugueFácil</title>
+    <link rel="stylesheet" href="estilos/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Cabeçalho -->
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="2-removebg-preview.png" alt="Logo AlugueFácil" class="logo-img">
+                </a>
+            </div>
+        
+            <nav class="nav-links">
+                <a href="login.html">Entrar</a>
+            </nav>
+        
+            <div class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Formulário de cadastro -->
+    <main class="form-container" style="max-width: 450px; margin: 60px auto; padding: 20px;">
+        <h2 style="text-align: center; margin-bottom: 20px;">Criar Conta</h2>
+        <form action="php/cadastrar_usuario.php" method="POST" style="display: flex; flex-direction: column;" onsubmit="return validarSenha();">
+            <label for="nome">Nome Completo:</label>
+            <input type="text" id="nome" name="nome" placeholder="Seu nome" required>
+            
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com" required>
+            
+            <label for="senha">Senha:</label>
+            <input type="password" id="senha" name="senha" placeholder="Crie uma senha" required>
+            
+            <label for="confirmarSenha">Confirmar Senha:</label>
+            <input type="password" id="confirmarSenha" name="confirmarSenha" placeholder="Repita a senha" required>
+            
+            <button type="submit" style="margin-top: 15px;">Cadastrar</button>
+        </form>
+    </main>
+
+    <script>
+        function validarSenha() {
+            const senha = document.getElementById("senha").value;
+            const confirmarSenha = document.getElementById("confirmarSenha").value;
+
+            if (senha !== confirmarSenha) {
+                alert("As senhas não coincidem.");
+                return false;
+            }
+            return true;
+        }
+    </script>
+
+</body>
+</html>
