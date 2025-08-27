@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 26/08/2025 às 17:02
+-- Tempo de geração: 27/08/2025 às 17:27
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Banco de dados: `lojaimoveis`
+-- Banco de dados: `aluguefacil`
 --
 
 -- --------------------------------------------------------
@@ -81,6 +81,13 @@ CREATE TABLE `imagens_imovel` (
   `criado_em` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Despejando dados para a tabela `imagens_imovel`
+--
+
+INSERT INTO `imagens_imovel` (`id`, `imovel_id`, `caminho_arquivo`, `criado_em`) VALUES
+(1, 1, 'uploads/img_68af1afa30b62.jpg', '2025-08-27 14:49:30');
+
 -- --------------------------------------------------------
 
 --
@@ -121,6 +128,13 @@ CREATE TABLE `imoveis_usuarios` (
   `mobiliado` tinyint(1) DEFAULT NULL,
   `data_cadastro` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `imoveis_usuarios`
+--
+
+INSERT INTO `imoveis_usuarios` (`id`, `usuario_id`, `titulo`, `descricao`, `cep`, `endereco`, `tipo`, `valor`, `quartos`, `banheiros`, `sala`, `cozinha`, `area`, `garagem`, `mobiliado`, `data_cadastro`) VALUES
+(1, 1, 'Casa do wil', 'Teste', '1670000', 'Joaquim nabuco', 'casa', 155555.00, 3, 2, 2, 1, 130.00, 1, 1, '2025-08-27 14:49:30');
 
 -- --------------------------------------------------------
 
@@ -299,7 +313,7 @@ ALTER TABLE `enderecos`
 -- AUTO_INCREMENT de tabela `imagens_imovel`
 --
 ALTER TABLE `imagens_imovel`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de tabela `imoveis`
@@ -311,7 +325,7 @@ ALTER TABLE `imoveis`
 -- AUTO_INCREMENT de tabela `imoveis_usuarios`
 --
 ALTER TABLE `imoveis_usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de tabela `pagamentos`
